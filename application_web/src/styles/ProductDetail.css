@@ -1,0 +1,39 @@
+.product-detail-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.product-detail {
+  display: flex;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.product-detail img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.product-info-market {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.product-info-market h1 {
+  width: 100%;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.product-info-market p {
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  text-align: left;
+}

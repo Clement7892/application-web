@@ -1,0 +1,18 @@
+.home-module {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  background-color: #f0f0f0;
+}
+
+.home-module-img {
+  width: 27%;
+  height: auto;
+  margin: 0 30px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.home-module-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}

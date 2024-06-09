@@ -1,0 +1,24 @@
+.App-header {
+  background-color: #fff;
+  padding: 20px;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.App-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.App-header nav ul li {
+  margin: 0 10px;
+}
+
+.App-header nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}

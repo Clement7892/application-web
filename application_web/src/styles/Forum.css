@@ -1,0 +1,90 @@
+.App {
+  background-color: #f5eeea;
+}
+
+.forum-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+.messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.message-item {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  text-align: left;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.message-own {
+  background-color: #d0e7ff;
+}
+
+.align-right {
+  align-self: flex-end;
+}
+
+.align-left {
+  align-self: flex-start;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.message-username {
+  margin-right: 10px;
+}
+
+.message-timestamp {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.message-input {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 10px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.message-input textarea {
+  width: calc(50% - 100px);
+  height: 50px;
+  resize: none;
+  padding: 10px;
+  border-radius: 10px 0px 0px 10px;
+  border: 1px solid #ccc;
+}
+
+.message-input button {
+  width: 80px;
+  padding: 10px;
+  border: none;
+  border-radius: 0px 10px 10px 0px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.message-input button:hover {
+  background-color: #0056b3;
+}
