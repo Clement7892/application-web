@@ -3,7 +3,7 @@ import axios from "axios";
 const fetchUserInfo = async (token) => {
   try {
     const response = await axios.get(
-      `${process.env.BACKEND_URL}/api/v1/auth/user`,
+      `https://application-web-backend.onrender.com/api/v1/auth/user`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

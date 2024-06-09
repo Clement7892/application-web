@@ -13,7 +13,7 @@ function Register() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${process.env.BACKEND_URL}/api/v1/auth/register`,
+        `https://application-web-backend.onrender.com/api/v1/auth/register`,
         {
           name,
           email,

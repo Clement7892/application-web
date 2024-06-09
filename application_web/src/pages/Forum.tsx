@@ -27,7 +27,7 @@ const Forum = () => {
     const fetchMessages = async () => {
       try {
         const response = await axios.get(
-          `${process.env.BACKEND_URL}/api/v1/forum/messages`
+          `https://application-web-backend.onrender.com/api/v1/forum/messages`
         );
         setMessages(response.data);
       } catch (error) {
@@ -56,7 +56,7 @@ const Forum = () => {
       }
 
       const response = await axios.post(
-        `${process.env.BACKEND_URL}/api/v1/forum/messages`,
+        `https://application-web-backend.onrender.com/api/v1/forum/messages`,
         { content: newMessage },
         {
           headers: {

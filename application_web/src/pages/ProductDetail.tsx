@@ -24,7 +24,7 @@ const ProductDetail = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `${process.env.BACKEND_URL}/api/v1/products/${id}`
+          `https://application-web-backend.onrender.com/api/v1/products/${id}`
         );
         setProduct(response.data.data.product);
       } catch (err) {
