@@ -67,7 +67,6 @@ const Forum = () => {
       );
       setNewMessage("");
       setMessages((prevMessages) => [...prevMessages, response.data.message]);
-      window.location.reload(); // Rafraîchir la page après l'envoi du message
     } catch (error) {
       console.error("Erreur lors de la création du message:", error);
     }
