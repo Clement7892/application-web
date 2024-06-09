@@ -23,18 +23,18 @@ const Forum = () => {
   const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
   const token: string | null = localStorage.getItem("token");
 
-  useEffect(() => {
-    const fetchMessages = async () => {
-      try {
-        const response = await axios.get(
-          `https://application-web-backend.onrender.com/api/v1/forum/messages`
-        );
-        setMessages(response.data);
-      } catch (error) {
-        console.error("Erreur lors de la récupération des messages:", error);
-      }
-    };
+  const fetchMessages = async () => {
+    try {
+      const response = await axios.get(
+        `https://application-web-backend.onrender.com/api/v1/forum/messages`
+      );
+      setMessages(response.data);
+    } catch (error) {
+      console.error("Erreur lors de la récupération des messages:", error);
+    }
+  };
 
+  useEffect(() => {
     const decodeToken = () => {
       if (token) {
         const base64Url = token.split(".")[1];
@@ -67,6 +67,7 @@ const Forum = () => {
       );
       setNewMessage("");
       setMessages((prevMessages) => [...prevMessages, response.data.message]);
+      fetchMessages();
     } catch (error) {
       console.error("Erreur lors de la création du message:", error);
     }
