@@ -13,7 +13,7 @@ app.use(cors());
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@application-web.vt8o0fe.mongodb.net/?retryWrites=true&w=majority`
+    `mongodb+srv://$dbUser:$gWNO7JV9Nck02TA2@application-web.vt8o0fe.mongodb.net/?retryWrites=true&w=majority&appName=application-web`
   )
   .then(() => {
     console.log("Successfully connected to database");
