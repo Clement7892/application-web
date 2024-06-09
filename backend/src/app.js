@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const errorHandler = require("./middlewares/errorHandler");
-const config = require("./config");
 const apiRouter = require("./routes");
 const app = express();
 const bodyParser = require("body-parser");
@@ -33,6 +32,6 @@ app.use("/api/v1", apiRouter);
 app.use(errorHandler);
 
 //run server
-app.listen(config.port, () => {
+app.listen(process.env.PORT, function () {
   console.log("Server launch");
 });
