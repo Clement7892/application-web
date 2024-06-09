@@ -1,12 +1,14 @@
 const express = require("express");
+const cors = require("cors");
+const errorHandler = require("./middlewares/errorHandler");
+const config = require("./config");
+const apiRouter = require("./routes");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const cors = require("cors");
 require("dotenv").config();
-const apiRouter = require("./routes");
-const errorHandler = require("./middlewares/errorHandler");
 
+// parse json request body
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -19,9 +21,18 @@ mongoose
   })
   .catch((err) => console.log(err));
 
+// initial route
+app.get("/", (req, res) => {
+  res.send({ message: "Welcome to app-store-api application." });
+});
+
+// api routes prefix
 app.use("/api/v1", apiRouter);
+
+// error handling
 app.use(errorHandler);
 
-app.listen(process.env.PORT, function () {
-  console.log(`Server running on port ${process.env.PORT}`);
+//run server
+app.listen(config.port, () => {
+  console.log("Server launch");
 });
