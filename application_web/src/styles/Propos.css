@@ -4,7 +4,8 @@
 }
 
 .hero-section {
-  background: url("/images/hero-background.jpg") no-repeat center center;
+  background: url("../../public/images/hero-background.jpg") no-repeat center
+    center;
   background-size: cover;
   padding: 100px 20px;
   text-align: center;
