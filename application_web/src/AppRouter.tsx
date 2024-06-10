@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import ProductDetail from "./pages/ProductDetail";
 import Login from "./pages/Login";
 import Forum from "./pages/Forum";
+import Propos from "./pages/Propos";
 
 function AppRouter() {
   return (
@@ -14,6 +15,7 @@ function AppRouter() {
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forum" element={<Forum />} />
+        <Route path="propos" element={<Propos />} />
       </Routes>
     </Router>
   );

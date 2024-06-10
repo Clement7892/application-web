@@ -13,7 +13,7 @@ function HeaderLogin() {
             <a href="/">Nos produits</a>
           </li>
           <li>
-            <a href="/">À propos</a>
+            <Link to="/propos">À propos</Link>
           </li>
           <li>
             <Link to="/forum">Forum</Link>
