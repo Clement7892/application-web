@@ -1,5 +1,4 @@
 .propos-container {
-  font-family: "Arial, sans-serif";
   color: #333;
 }
 
@@ -31,7 +30,6 @@
   font-size: 2.5em;
   margin-bottom: 20px;
   text-align: center;
-  color: #007bff;
 }
 
 .history,
