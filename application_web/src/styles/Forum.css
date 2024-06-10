@@ -88,3 +88,20 @@
 .message-input button:hover {
   background-color: #0056b3;
 }
+
+.message-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.message-actions button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.message-actions button img {
+  width: 20px;
+  height: 20px;
+}
