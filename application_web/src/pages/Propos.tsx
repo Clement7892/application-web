@@ -34,12 +34,12 @@ const Propos = () => {
                 src={process.env.PUBLIC_URL + "/images/team1.jpg"}
                 alt="Membre de l'équipe"
               />
-              <h3>Jean Dupont</h3>
+              <h3>Fauna Gendron</h3>
               <p>Fondateur & CEO</p>
             </div>
             <div className="team-member">
               <img
-                src={process.env.PUBLIC_URL + "/images/team1.jpg"}
+                src={process.env.PUBLIC_URL + "/images/team2.jpg"}
                 alt="Membre de l'équipe"
               />
               <h3>Marie Curie</h3>
@@ -47,10 +47,10 @@ const Propos = () => {
             </div>
             <div className="team-member">
               <img
-                src={process.env.PUBLIC_URL + "/images/team1.jpg"}
+                src={process.env.PUBLIC_URL + "/images/team3.jpg"}
                 alt="Membre de l'équipe"
               />
-              <h3>Paul Martin</h3>
+              <h3>Camille Sevier</h3>
               <p>Responsable Marketing</p>
             </div>
           </div>
