@@ -21,7 +21,6 @@
 - Frontend:
   - Langage: TypeScript
   - Bibliothèque: React.js
-  - Framework: [Framework utilisé]
 
 ## Fonctionnalités
 
