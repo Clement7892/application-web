@@ -21,6 +21,8 @@ const Forum = () => {
   const [newMessage, setNewMessage] = useState<string>("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
+  const [editMessageId, setEditMessageId] = useState<string | null>(null);
+  const [editMessageContent, setEditMessageContent] = useState<string>("");
   const token: string | null = localStorage.getItem("token");
 
   const fetchMessages = async () => {
@@ -50,7 +52,6 @@ const Forum = () => {
 
   const handleCreateMessage = async () => {
     try {
-      const token = localStorage.getItem("token");
       if (!token) {
         throw new Error("Token not found");
       }
@@ -67,9 +68,65 @@ const Forum = () => {
       );
       setNewMessage("");
       setMessages((prevMessages) => [...prevMessages, response.data.message]);
-      fetchMessages();
     } catch (error) {
       console.error("Erreur lors de la création du message:", error);
+    }
+  };
+
+  const handleDeleteMessage = async (messageId: string) => {
+    try {
+      if (!token) {
+        throw new Error("Token not found");
+      }
+
+      await axios.delete(
+        `https://application-web-backend.onrender.com/api/v1/forum/messages/${messageId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setMessages((prevMessages) =>
+        prevMessages.filter((message) => message._id !== messageId)
+      );
+    } catch (error) {
+      console.error("Erreur lors de la suppression du message:", error);
+    }
+  };
+
+  const handleEditMessage = (messageId: string, content: string) => {
+    setEditMessageId(messageId);
+    setEditMessageContent(content);
+  };
+
+  const handleUpdateMessage = async () => {
+    try {
+      if (!token) {
+        throw new Error("Token not found");
+      }
+
+      await axios.put(
+        `https://application-web-backend.onrender.com/api/v1/forum/messages/${editMessageId}`,
+        { content: editMessageContent },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      setMessages((prevMessages) =>
+        prevMessages.map((message) =>
+          message._id === editMessageId
+            ? { ...message, content: editMessageContent }
+            : message
+        )
+      );
+      setEditMessageId(null);
+      setEditMessageContent("");
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour du message:", error);
     }
   };
 
@@ -98,7 +155,31 @@ const Forum = () => {
                   {new Date(message.createdAt).toLocaleString()}
                 </span>
               </div>
-              <p>{message.content}</p>
+              {editMessageId === message._id ? (
+                <div className="edit-message">
+                  <textarea
+                    value={editMessageContent}
+                    onChange={(e) => setEditMessageContent(e.target.value)}
+                  />
+                  <button onClick={handleUpdateMessage}>Update</button>
+                </div>
+              ) : (
+                <p>{message.content}</p>
+              )}
+              {userInfo?.id === message.userId && (
+                <div className="message-actions">
+                  <button
+                    onClick={() =>
+                      handleEditMessage(message._id, message.content)
+                    }
+                  >
+                    Edit
+                  </button>
+                  <button onClick={() => handleDeleteMessage(message._id)}>
+                    Delete
+                  </button>
+                </div>
+              )}
             </div>
           ))}
         </div>
