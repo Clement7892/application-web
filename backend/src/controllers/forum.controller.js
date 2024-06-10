@@ -68,7 +68,7 @@ exports.updateMessage = async (req, res) => {
 exports.deleteMessage = async (req, res) => {
   try {
     const { id } = req.params;
-    const { userId } = req.user;
+    const { id: userId } = req.user;
 
     const message = await Message.findById(id);
 
