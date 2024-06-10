@@ -161,7 +161,9 @@ const Forum = () => {
                     value={editMessageContent}
                     onChange={(e) => setEditMessageContent(e.target.value)}
                   />
-                  <button onClick={handleUpdateMessage}>Update</button>
+                  <button onClick={handleUpdateMessage}>
+                    <img src="/check.svg" alt="Update" />
+                  </button>
                 </div>
               ) : (
                 <p>{message.content}</p>
