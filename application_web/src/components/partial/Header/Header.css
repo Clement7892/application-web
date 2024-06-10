@@ -11,14 +11,34 @@
   margin: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .App-header nav ul li {
-  margin: 0 10px;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
 }
 
 .App-header nav ul li a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.App-header nav ul li a svg {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  fill: #007bff;
+}
+
+.App-header nav ul li a:hover {
+  color: #007bff;
+}
+
+.App-header nav ul li a:hover svg {
+  fill: #0056b3;
 }

@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import { ReactComponent as HomeIcon } from "../icons/home.svg";
+import { ReactComponent as ProductsIcon } from "../icons/box.svg";
+import { ReactComponent as RegisterIcon } from "../icons/user-plus.svg";
+import { ReactComponent as LoginIcon } from "../icons/log-in.svg";
 import "./Header.css";
 
 function Header() {
@@ -7,16 +11,28 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <a href="/">Accueil</a>
+            <Link to="/">
+              <HomeIcon />
+              Accueil
+            </Link>
           </li>
           <li>
-            <a href="/">Nos produits</a>
+            <Link to="/">
+              <ProductsIcon />
+              Nos produits
+            </Link>
           </li>
           <li>
-            <Link to="/register">Inscription</Link>
+            <Link to="/register">
+              <RegisterIcon />
+              Inscription
+            </Link>
           </li>
           <li>
-            <Link to="/login">Connexion</Link>
+            <Link to="/login">
+              <LoginIcon />
+              Connexion
+            </Link>
           </li>
         </ul>
       </nav>
