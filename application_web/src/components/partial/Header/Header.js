@@ -17,10 +17,13 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link to="/product">
+            <Link to="/">
               <ProductsIcon />
               Nos produits
             </Link>
+          </li>
+          <li>
+            <Link to="/history">Histoire</Link>
           </li>
           <li className="right-align">
             <Link to="/register">
