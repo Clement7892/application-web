@@ -35,7 +35,7 @@ const Propos = () => {
                 alt="Membre de l'équipe"
               />
               <h3>Fauna Gendron</h3>
-              <p>Fondateur & CEO</p>
+              <p>Directrice Artistique</p>
             </div>
             <div className="team-member">
               <img
@@ -43,7 +43,7 @@ const Propos = () => {
                 alt="Membre de l'équipe"
               />
               <h3>Marie Curie</h3>
-              <p>Directrice Artistique</p>
+              <p>Fondateur & CEO</p>
             </div>
             <div className="team-member">
               <img
