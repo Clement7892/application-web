@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ReactComponent as HomeIcon } from "../../../icons/home.svg";
 import { ReactComponent as ProductsIcon } from "../../../icons/box.svg";
+import { ReactComponent as HistoryIcon } from "../../../icons/history.svg";
 import { ReactComponent as RegisterIcon } from "../../../icons/user-plus.svg";
 import { ReactComponent as LoginIcon } from "../../../icons/log-in.svg";
 import "./Header.css";
@@ -23,7 +24,10 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link to="/history">Histoire</Link>
+            <Link to="/history">
+              <HistoryIcon />
+              Histoire
+            </Link>
           </li>
           <li className="right-align">
             <Link to="/register">
