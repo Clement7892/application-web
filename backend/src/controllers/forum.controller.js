@@ -82,7 +82,7 @@ exports.deleteMessage = async (req, res) => {
       return res.status(403).json({ success: false, message: "Unauthorized" });
     }
 
-    await message.remove();
+    await Message.deleteOne({ _id: id });
 
     res.status(200).json({ success: true, message: "Message deleted" });
   } catch (error) {
