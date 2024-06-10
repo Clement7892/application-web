@@ -24,7 +24,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link to="/history">
+            <Link to="/propos">
               <HistoryIcon />
               Histoire
             </Link>
