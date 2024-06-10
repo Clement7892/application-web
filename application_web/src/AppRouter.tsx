@@ -5,6 +5,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Login from "./pages/Login";
 import Forum from "./pages/Forum";
 import Propos from "./pages/Propos";
+import Products from "./pages/Product";
 
 function AppRouter() {
   return (
@@ -16,6 +17,7 @@ function AppRouter() {
         <Route path="/login" element={<Login />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="propos" element={<Propos />} />
+        <Route path="product" element={<Products />} />
       </Routes>
     </Router>
   );

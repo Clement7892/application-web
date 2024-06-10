@@ -3,7 +3,6 @@ import "../styles/App.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Header from "../components/partial/Header/Header";
-import Newsletter from "../components/Newsletter/Newsletter";
 import Photos from "../components/Photos/Photos";
 import HeaderLogin from "../components/partial/HeaderLogin/HeaderLogin";
 
@@ -15,7 +14,7 @@ interface Product {
   description: string;
 }
 
-function App() {
+function Products() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -70,24 +69,6 @@ function App() {
     <div className="App">
       {isLoggedIn ? <HeaderLogin /> : <Header />}
       <main>
-        <section className="main-module">
-          <div
-            className="slide"
-            style={{ transform: `translateX(${-currentSlide * 100}%)` }}
-          >
-            <img
-              className="main-module-img"
-              alt=""
-              src={process.env.PUBLIC_URL + "/home_01_module.webp"}
-            />
-            <img
-              className="main-module-img"
-              alt=""
-              src={process.env.PUBLIC_URL + "/home_02_module.webp"}
-            />
-          </div>
-        </section>
-        <Photos />
         <section className="products-module">
           <h2 className="products-module-title">NOTRE SÉLECTION</h2>
           <div className="product-carousel">
@@ -120,10 +101,10 @@ function App() {
             </div>
           </div>
         </section>
-        <Newsletter />
+        <Photos />
       </main>
     </div>
   );
 }
 
-export default App;
+export default Products;

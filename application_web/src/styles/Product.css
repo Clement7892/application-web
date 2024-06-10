@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  text-align: center;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+.products-module {
+  background-color: #f5eeea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5% 10%;
+}
+
+.products-module-title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28rem;
+  font-weight: 700;
+  padding-bottom: 3%;
+  color: black;
+}
+
+.product-carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.product-carousel-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.product-carousel-slide {
+  flex: 0 0 25%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.product-img-container {
+  width: 100%;
+  height: auto;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+}
+
+.products-module-text {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  font-weight: 700;
+}
+
+.product-price {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  font-weight: 700;
+}
+
+.product-separator {
+  color: #ac5649;
+  margin-top: -10%;
+  font-size: 2rem;
+}
+
+.product-description {
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-align: left;
+}
+
+.loading,
+.error {
+  font-size: 1.5em;
+  color: #333;
+  padding: 20px;
+}
