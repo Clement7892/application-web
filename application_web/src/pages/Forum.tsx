@@ -68,6 +68,7 @@ const Forum = () => {
       );
       setNewMessage("");
       setMessages((prevMessages) => [...prevMessages, response.data.message]);
+      fetchMessages();
     } catch (error) {
       console.error("Erreur lors de la création du message:", error);
     }
