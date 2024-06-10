@@ -18,7 +18,7 @@ function HeaderLogin() {
             </Link>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/product">
               <ProductsIcon />
               Nos produits
             </Link>
