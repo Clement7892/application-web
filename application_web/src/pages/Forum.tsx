@@ -173,10 +173,10 @@ const Forum = () => {
                       handleEditMessage(message._id, message.content)
                     }
                   >
-                    Edit
+                    <img src="/pencil.svg" alt="Edit" />
                   </button>
                   <button onClick={() => handleDeleteMessage(message._id)}>
-                    Delete
+                    <img src="/trash-2.svg" alt="Delete" />
                   </button>
                 </div>
               )}
