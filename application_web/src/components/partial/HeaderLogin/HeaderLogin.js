@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom";
+import { ReactComponent as HomeIcon } from "../../../icons/home.svg";
+import { ReactComponent as ProductsIcon } from "../../../icons/box.svg";
+import { ReactComponent as HistoryIcon } from "../../../icons/history.svg";
+import { ReactComponent as ForumIcon } from "../../../icons/forum.svg";
+
 import "./HeaderLogin.css";
 
 function HeaderLogin() {
@@ -7,16 +12,28 @@ function HeaderLogin() {
       <nav>
         <ul>
           <li>
-            <a href="/">Accueil</a>
+            <Link to="/">
+              <HomeIcon />
+              Accueil
+            </Link>
           </li>
           <li>
-            <a href="/">Nos produits</a>
+            <Link to="/">
+              <ProductsIcon />
+              Nos produits
+            </Link>
           </li>
           <li>
-            <Link to="/propos">À propos</Link>
+            <Link to="/propos">
+              <HistoryIcon />
+              History
+            </Link>
           </li>
           <li>
-            <Link to="/forum">Forum</Link>
+            <Link to="/forum">
+              <ForumIcon />
+              Forum
+            </Link>
           </li>
         </ul>
       </nav>
