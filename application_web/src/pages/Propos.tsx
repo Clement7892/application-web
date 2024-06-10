@@ -12,20 +12,6 @@ const Propos = () => {
       </div>
 
       <div className="content-section">
-        <section className="history">
-          <h2>Notre Histoire</h2>
-          <p>
-            Fondée en 2010, notre entreprise a commencé avec une simple mission
-            : offrir des vêtements de haute qualité à des prix abordables.
-            Depuis nos débuts, nous avons évolué pour devenir une marque
-            reconnue mondialement, connue pour son style unique et ses designs
-            innovants.
-          </p>
-          <img
-            src={process.env.PUBLIC_URL + "/images/history.jpg"}
-            alt="Notre Histoire"
-          />
-        </section>
         <section className="team">
           <h2>Notre Équipe</h2>
           <div className="team-members">
