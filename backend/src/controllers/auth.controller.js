@@ -2,7 +2,7 @@ const User = require("../schema/user.schema");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
-exports.registerUser = async (req, res) => {
+exports.register = async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
