@@ -10,10 +10,10 @@ const fetchUserInfo = async (token) => {
         },
       }
     );
-    return response.data.user; // Retourne les informations de l'utilisateur
+    return response.data.user;
   } catch (error) {
     console.error("Error fetching user info:", error);
-    throw error; // Lance une exception en cas d'erreur
+    throw error;
   }
 };
 
