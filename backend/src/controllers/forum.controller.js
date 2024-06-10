@@ -41,7 +41,7 @@ exports.updateMessage = async (req, res) => {
   try {
     const { id } = req.params;
     const { content } = req.body;
-    const { userId } = req.user;
+    const { id: userId } = req.user;
     const message = await Message.findById(id);
     if (!message) {
       return res
