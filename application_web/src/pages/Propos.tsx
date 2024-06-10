@@ -26,32 +26,6 @@ const Propos = () => {
             alt="Notre Histoire"
           />
         </section>
-
-        <section className="mission-values">
-          <h2>Notre Mission & Valeurs</h2>
-          <div className="mission-values-content">
-            <div className="mission">
-              <h3>Mission</h3>
-              <p>
-                Nous nous engageons à offrir les meilleurs produits à nos
-                clients tout en respectant des normes éthiques et durables. Nous
-                croyons en la mode accessible à tous, sans compromettre la
-                qualité.
-              </p>
-            </div>
-            <div className="values">
-              <h3>Valeurs</h3>
-              <ul>
-                <li>Innovation</li>
-                <li>Qualité</li>
-                <li>Durabilité</li>
-                <li>Éthique</li>
-                <li>Accessibilité</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
         <section className="team">
           <h2>Notre Équipe</h2>
           <div className="team-members">

@@ -46,35 +46,6 @@
   height: auto;
 }
 
-.mission-values-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.mission,
-.values {
-  flex: 1;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.values ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.values li {
-  background-color: #007bff;
-  color: #fff;
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-}
-
 .team-members {
   display: flex;
   flex-wrap: wrap;
