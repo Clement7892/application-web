@@ -2,22 +2,47 @@ const User = require("../schema/user.schema");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
-exports.register = async (req, res) => {
+exports.registerUser = async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
-    let user = await User.findOne({ email });
-    if (user) {
-      return res.status(400).json({ msg: "User already exists" });
+    if (!process.env.JWT_SECRET) {
+      throw new Error("JWT_SECRET is not defined");
     }
 
-    user = new User({ name, email, password });
-    await user.save();
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({
+        success: false,
+        status: 400,
+        message: "Email already in use",
+      });
+    }
 
-    res.status(201).json({ msg: "User registered successfully" });
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new User({ name, email, password: hashedPassword });
+    await newUser.save();
+
+    const token = jwt.sign(
+      { id: newUser._id, name: newUser.name, email: newUser.email },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+
+    return res.status(201).json({
+      success: true,
+      status: 201,
+      message: "Registration successful",
+      token,
+    });
   } catch (error) {
-    console.error(error.message);
-    res.status(500).send("Server error");
+    console.error("Error during registration:", error.message);
+    return res.status(500).json({
+      success: false,
+      status: 500,
+      message: "Internal server error",
+      stack: process.env.NODE_ENV === "development" ? error.stack : undefined,
+    });
   }
 };
 

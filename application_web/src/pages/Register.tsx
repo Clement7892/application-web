@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "../styles/Register.css";
 import Header from "../components/partial/Header/Header";
 
@@ -8,6 +9,7 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,9 +22,18 @@ function Register() {
           password,
         }
       );
-      setMessage(`Vous avez belle est bien créer votre utilisateur!`);
+
+      if (response.data.success) {
+        localStorage.setItem("token", response.data.token);
+        setMessage("Vous avez bien créé votre compte !");
+        navigate("/");
+      } else {
+        setMessage(response.data.message);
+        console.error("Registration failed:", response.data.message);
+      }
     } catch (error) {
-      setMessage("Failed to register user.");
+      setMessage("Une erreur est survenue lors de l'inscription.");
+      console.error("An error occurred during registration:", error);
     }
   };
 
@@ -54,7 +65,7 @@ function Register() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="password">Mot de passes :</label>
+              <label htmlFor="password">Mot de passe :</label>
               <input
                 type="password"
                 id="password"
