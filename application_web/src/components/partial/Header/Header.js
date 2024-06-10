@@ -22,13 +22,13 @@ function Header() {
               Nos produits
             </Link>
           </li>
-          <li>
+          <li className="right-align">
             <Link to="/register">
               <RegisterIcon />
               Inscription
             </Link>
           </li>
-          <li>
+          <li className="right-align">
             <Link to="/login">
               <LoginIcon />
               Connexion

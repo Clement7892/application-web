@@ -10,12 +10,11 @@
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .App-header nav ul li {
-  margin: 0 20px;
   display: flex;
   align-items: center;
 }
@@ -41,4 +40,8 @@
 
 .App-header nav ul li a:hover svg {
   fill: #0056b3;
+}
+
+.right-align {
+  margin-left: auto;
 }
