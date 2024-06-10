@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Propos.css";
 import HeaderLogin from "../components/partial/HeaderLogin/HeaderLogin";
+import Header from "../components/partial/Header/Header";
 
 const Propos = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   return (
     <div className="propos-container">
-      <HeaderLogin />
+      {isLoggedIn ? <HeaderLogin /> : <Header />}
       <div className="hero-section">
         <h1>À propos de nous</h1>
         <p>Découvrez notre histoire, nos valeurs et notre équipe.</p>

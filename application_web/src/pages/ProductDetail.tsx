@@ -5,6 +5,7 @@ import "../styles/ProductDetail.css";
 import Header from "../components/partial/Header/Header";
 import Newsletter from "../components/Newsletter/Newsletter";
 import Photos from "../components/Photos/Photos";
+import HeaderLogin from "../components/partial/HeaderLogin/HeaderLogin";
 
 interface Product {
   _id: string;
@@ -19,6 +20,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -37,6 +39,13 @@ const ProductDetail = () => {
     fetchProduct();
   }, [id]);
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -51,7 +60,7 @@ const ProductDetail = () => {
 
   return (
     <div className="App">
-      <Header />
+      {isLoggedIn ? <HeaderLogin /> : <Header />}
       <div className="product-detail-container">
         <div className="product-detail">
           <img
