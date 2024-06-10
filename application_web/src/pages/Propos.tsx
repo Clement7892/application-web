@@ -21,7 +21,10 @@ const Propos = () => {
             reconnue mondialement, connue pour son style unique et ses designs
             innovants.
           </p>
-          <img src="/images/history.jpg" alt="Notre Histoire" />
+          <img
+            src={process.env.PUBLIC_URL + "/images/history.jpg"}
+            alt="Notre Histoire"
+          />
         </section>
 
         <section className="mission-values">
@@ -53,17 +56,26 @@ const Propos = () => {
           <h2>Notre Équipe</h2>
           <div className="team-members">
             <div className="team-member">
-              <img src="/images/team1.jpg" alt="Membre de l'équipe" />
+              <img
+                src={process.env.PUBLIC_URL + "/images/team1.jpg"}
+                alt="Membre de l'équipe"
+              />
               <h3>Jean Dupont</h3>
               <p>Fondateur & CEO</p>
             </div>
             <div className="team-member">
-              <img src="/images/team1.jpg" alt="Membre de l'équipe" />
+              <img
+                src={process.env.PUBLIC_URL + "/images/team1.jpg"}
+                alt="Membre de l'équipe"
+              />
               <h3>Marie Curie</h3>
               <p>Directrice Artistique</p>
             </div>
             <div className="team-member">
-              <img src="/images/team1.jpg" alt="Membre de l'équipe" />
+              <img
+                src={process.env.PUBLIC_URL + "/images/team1.jpg"}
+                alt="Membre de l'équipe"
+              />
               <h3>Paul Martin</h3>
               <p>Responsable Marketing</p>
             </div>
